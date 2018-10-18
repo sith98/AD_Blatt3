@@ -17,11 +17,13 @@ public class Aufgabe4 {
     private static void insertionSort(int[] numbers) {
         for (int i = 1; i < numbers.length; i++) {
             System.out.println(Arrays.toString(numbers));
-            int j = i;
-            while (j > 0 && numbers[j] < numbers[j - 1]) {
-                swap(numbers, j, j - 1);
+            int value = numbers[i];
+            int j = i - 1;
+            while (j >= 0 && numbers[j] > value) {
+                numbers[j + 1] = numbers[j];
                 j -= 1;
             }
+            numbers[j + 1] = value;
         }
         System.out.println(Arrays.toString(numbers));
     }
