@@ -83,6 +83,18 @@ public class Aufgabe4 {
         System.out.println(Arrays.toString(numbers));
     }
 
+    public static void selectionSortDesc(int[] numbers) {
+        for (int i = 0; i < numbers.length; i++) {
+            int largest = i;
+            for (int j = i + 1; j < numbers.length; j++) {
+                if (numbers[j] > numbers[largest]) {
+                    largest = j;
+                }
+            }
+            swap(numbers, i, largest);
+        }
+    }
+
 //    private static int[] help;
 //    private static void mergeSort(int[] numbers) {
 //        help = new int[numbers.length];
